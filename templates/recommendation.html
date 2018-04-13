@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block body %}
+<head>
+    <meta charset="utf-8">
+    <title>Recommendation System</title>
+	{% for jsfile_name in script_list %}
+    <script src="{{host}}/{{jsfile_name}}.js"></script>
+    {% endfor %}
+</head>
+<div align="center">
+<h3 style="font-weight: 600">Recommendation System</h3>
+        {{myechart|safe}}
+</div>
+    <h2>Conclusion</h2>
+<p>
+    The movie recommended to Toby: The night listener.
+</p>
+<p>
+    Toby and Lisa Rose are of the similar taste.
+</p>
+<p>
+    "Lady in the Water" and "You, Me and Dupree" are of the similar movie.
+</p>
+
+    <br>
+    <br>
+{% endblock %}

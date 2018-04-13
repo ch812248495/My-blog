@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body%}
+
+    <form action = "" method = "POST" style="padding: 20px;width: 500px;margin: 0 auto;box-shadow: 3px 3px 3px #888888;border:1px solid;border-color: #d5d5d5d5">
+    <h1 align="center">Login</h1>
+        <div class = "form-group">
+            <label>Username</label>
+            <input type="text" name = "username" class="form-control" value={{ request.form.username }}>
+        </div>
+        <div class = "form-group">
+            <label>Password</label>
+            <input type="password" name="password" class = "form-control" value="{{ request.form.password }}">
+        </div>
+
+        <div style="margin-left: 350px">
+            <button type="submit" class = "btn-u btn-u-lg btn-u-blue btn-u-upper rounded-2x">Submit</button>
+        </div>
+        <br>
+        <div style="float:left;width:49%;">
+            <a href="/find_password/" style="color: #555555;">
+                Forgot your password?
+            </a>
+        </div>
+
+        <div style="float:right;width:28%;">
+            <a href="/register/" style="color: #555555;">
+                Have not registered?
+            </a>
+        </div>
+    <br>
+
+
+    </form>
+
+
+
+{% endblock %}

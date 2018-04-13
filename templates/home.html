@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+<head>
+    <style type="text/css">
+    .container
+    {
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1000 !important;
+    }
+    p{
+        color:red;
+    }
+
+    </style>
+</head>
+{% block body %}
+    <div style="height: 120%;
+            background-image: url('/static/bg_note_coffee.jpg');
+            background-position: center;
+            background-size: cover ;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            padding: 0;
+            width: 100vw;
+            height:100vh;
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: -1"></div>
+    <div style="background: rgba(255,255,255,0.5);margin-top: 0;padding: 0;width: 100vw;height:100vh;position: fixed;top:0;left:0;z-index: -1"></div>
+
+
+    <div style="">
+        <div class = "container">
+        <br>
+        <h1 align="center" style="font-size: 40px;"> Welcome to
+            <font color="red">R</font><font color="orange">A</font><font color="yellow">I</font><font color="green">N</font><font color="#007FFE">B</font><font color="blue">O</font><font color="purple">W</font>
+            Blog </h1>
+        <p align="center" style="color: black !important;">
+            <font size="3">
+            This is the blog created by CAO Heng as the final project for Database system.
+            </font>
+        </p>
+        <div align="center" >
+        <font size="3">
+        <p style="color: black !important;">
+
+            Functions surported are as follows:
+
+        </p>
+        <p style="color: black !important;">
+            1. Register and create your account
+        </p>
+         <p style="color: black !important;">
+             2. Add, edit and delete Articles
+         </p>
+         <p style="color: black !important;">
+             3. Search for all the stocks and composite indexes around the world.
+         </p>
+         <p style="color: black !important;">
+             4. Do some prediction on future stock price by some simple regression training and SVM.
+         </p>
+         <p style="color: black !important;">
+             5. Social network app survey visualization demo.
+         </p>
+                     <p style="color: black !important;">
+             6. Recommendation system.
+         </p>
+
+
+         </font>
+        </div>
+        <br>
+
+        {% if not session.logged_in  %}
+            <div style="margin:0 auto;width:200px;height:100px">
+            <a href = "/register" class = "btn-u btn-u-lg btn-u-blue btn-u-upper rounded-2x">Register</a>
+            <a href="/login" class = "btn-u btn-u-lg btn-u-red btn-u-upper rounded-2x">Login</a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

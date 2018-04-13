@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block body %}
+<head>
+    <style type="text/css">
+    .for_test
+    {
+        height: 40px;
+        width: 300px;
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Proudly presented by ECharts</title>
+	{% for jsfile_name in script_list %}
+    <script src="{{host}}/{{jsfile_name}}.js"></script>
+    {% endfor %}
+    <style>
+        body{
+            height: 100%;
+        }
+    </style>
+</head>
+    <div>
+        <h1 align="center">Stock Information</h1>
+        <br>
+        <form method="POST" style="width: 400px;margin: 0 auto;" >
+            <input type="text" class = "for_test" name="stock_num" value="{{ request.form.stock_num }}">
+            <a href='/stock/{{ request.form.stock_num }}' id=stock><button class="btn-u btn-u-lg btn-u-blue btn-u-upper rounded-2x">Search</button></a>
+        </form>
+    </div>
+    <br>
+    <h4>Please search the stock by its stock number</h4>
+    <p>
+        Shanghai Stock Exchange: Finish with the suffix ".ss", like "000001.ss"(上证综指), "600000.ss"(浦发银行)
+    </p>
+    <p>
+        Shengzhen Stock Exchange: Finish with the suffix ".sz", like "399001.sz"(深圳成指), "000001.sz"(白云机场)
+    </p>
+    <p>
+        Hong Kong Stock Exchange: Finish with the suffix ".hk", like "0700.hk"(腾讯控股), "2318.hk"(平安银行)
+    </p>
+    <p>
+        Stocks in America: Enter the abbreviation: "AAPL"(苹果), "BABA"(阿里巴巴), "TSLA"(特斯拉), "^GSPC"(S&P 500指数), "NDAQ"(纳斯达克指数), "^DJI"(道琼斯指数)
+    </p>
+    <br>
+    <div align="center">
+        {{myechart|safe}}
+
+
+    </div>
+{% endblock %}

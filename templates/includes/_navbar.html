@@ -1,0 +1,42 @@
+<div class="one-page-header navbar navbar-default navbar-fixed-top homeapp-header" data-role="navigation" style="padding: 0px !important;">
+          <div class="container">
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navbar-ex1-collapse" >
+                    <div class="menu-container">
+                        <div style="float: left;padding-left: 40px;padding-bottom: 0px">
+                            <a class="navbar" href="#body">
+                         <img src="/static/image/icon.svg" alt="Cloud data integration - Etlworks" width="35px" height="35px">
+                   </a></div>
+                        <div style="float: right;padding-right: 40px;padding-top:20px;padding-bottom: 0px">
+                         <ul class="nav navbar-nav">
+                              <li class="page-scroll">	<a href="/">Home</a>
+                              </li>
+                              <li class="page-scroll">	<a href="/articles/">Articles</a>
+                              </li>
+                              <li class="page-scroll">	<a href="/dashboard/">Dashboard</a>
+                              </li>
+                              <li class="page-scroll">	<a href="/stock/">Stock</a>
+                              </li>
+                              <li class="page-scroll">	<a href="/virtualization/">visualization</a>
+                              </li>
+                              <li class="page-scroll">	<a href="/recommendation/">Recommendation</a>
+                              </li>
+                              {% if not session.logged_in %}
+                              <li class="page-scroll hidden-xs hidden-sm">	<a href="/login/"
+                                                                                 target="_blank" class="btn-u btn-u-lg btn-u-green btn-u-upper rounded-2x">Sign up</a>
+                              </li>
+                              {% endif %}
+                              {% if  session.logged_in %}
+                              <li class="page-scroll hidden-xs hidden-sm">	<a href="/logout/"
+                                                                                 target="_blank" class="btn-u btn-u-lg btn-u-green btn-u-upper rounded-2x">Logout</a>
+                              </li>
+                              {% endif %}
+
+                         </ul>
+                            </div>
+                    </div>
+               </div>
+               <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+     </div>

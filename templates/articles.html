@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <main role="main" class="container">
+    <div class="starter-template" style="padding: 20px;width: 500px;margin: 0 auto">
+    <h1>Articles</h1>
+    <ul class="list-group">
+    {% for article in articles %}
+        <li class="list-group-item"><a href="../article/{{ article.id }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+    </main>
+-
+
+{% endblock %}
