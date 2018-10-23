@@ -153,7 +153,7 @@ Fig.15. Predication
 	Here I use the LSTM(long short term network) to do the predication, there will be three types of layers: input layer, hidden layer, output layer.
 
 
-![aa]()
+![a](https://github.com/ch812248495/My-blog/blob/master/image/14.png)
 
 Fig.16. Three layers
 The input layer will be
@@ -163,7 +163,8 @@ the hidden layer is set to be
 the output layer is
 
 As a result, the previous price will influence the output, the fitting task is to calculate the parameters W and U.
-![aa]()
+![a](https://github.com/ch812248495/My-blog/blob/master/image/15.png)
+
 
 Fig.17. Predication
 
