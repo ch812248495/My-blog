@@ -1,4 +1,6 @@
 # My-blog
+
+### Key words
 Flask, python, Mysql, HTML, CSS
 
 ## ABSTRACT 
@@ -8,25 +10,29 @@ The project was created mainly by Flask+python(back-end), HTML, CSS and Javascri
 ## 1. AN OVERVIEW ON BLOG LOGIC
 ### 1.1  Registeration module
 The Home page of the RAINBOW Blog is as follow:
-
+![aa](https://github.com/ch812248495/My-blog/blob/master/image/1.png)
 
 Fig.1. The home page of rainbow blog 
 
 Basically, establishing a personal blog was one of my wishes. Main functions and modules are defined roughly in the navigation bar: Homepage, Articles page, Dashboard page, Stock page, Visualization page and Recommendation page.
 To utilize the functions provided by the blog, we have to register first, otherwise clicking any functions will lead to the Sign-up page with a red error message:
-
+![aa](https://github.com/ch812248495/My-blog/blob/master/image/2.png)
 Fig.2. The login page of rainbow blog 
 If you have an account you can login now; if not, click the “Register” button on the Home page or the sentence “Have not registered” and you will be redirected to the register page:
+![aa](https://github.com/ch812248495/My-blog/blob/master/image/3.png)
 
 Fig.3. The register page of rainbow blog 
 Here you can register for an account for yourself. I will use my own account “ch” for demonstration.
 Moreover, if you forget your username and password, you may click the sentence “Forgot your account” to enter your Email:
+![aa](https://github.com/ch812248495/My-blog/blob/master/image/4.png)
 
 Fig.4. The find back password page of rainbow blog 
 After submitting the request, the backend will search for the Email in the Mysql database, if you submit the correct Email, your username and password will be sent to the Email address; if not, an error message will appear.
+![a](https://github.com/ch812248495/My-blog/blob/master/image/5.png)
 
 Here I did some simplification, the password should not be sent simply as plain text for security concern.
 The mail sent from the backend is like this:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/6.png)
 
 Fig.5. The password Email 
 Now we can login and experience the service supported by blog.
@@ -34,35 +40,43 @@ Now we can login and experience the service supported by blog.
 
 Blogs are primarily created for recording and article sharing, so an article module should be included.
 After logging in, the page will be redirected to the dashboard:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/7.png)
 
 Fig.6. The dashboard page of rainbow blog 
 here I have added two articles already.
 	Click the “ADD ARTICLE” button to the article edit page:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/8.png)
 
 Fig.7. The add article page of rainbow blog 
 We can add articles and graphs on this page. Submit the article by clicking the button. The page will be redirected to the dashboard and refresh it with the successful message:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/17.png)
 
 Fig.8. Article created successfully 
 Edit and delete the article by clicking the button, too.
 Click the “ARTICLES” on the navigation bar to read the articles:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/10.png)
 
 Fig.9. The articles page of rainbow blog 
 Click the title of each article:
 
 
+![a](https://github.com/ch812248495/My-blog/blob/master/image/18.png)
 
 Fig.10. The article page of rainbow blog 
 
 ## 1.3  STOCK MODULE
 The initial page of stock module:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/19.png)
 
 Fig.11. The initial stock page of rainbow blog 
 Theoretically, all stocks’ information could be searched by stock id since the data is from yahoo API, I just listed a few frequently-discussed stock exchanges(Shanghai, Shenzhen, Hongkong and America markets).
 After entering the stock code, the k-line graph will be demonstrated (“AAPL” for example):
+![a](https://github.com/ch812248495/My-blog/blob/master/image/20.png)
 
 Fig.12. The stock info visualization
 Adjust the size of the window below to change the view.
 The backend is able to do some simple prediction for the coming 10 days (3 methods which will be discussed later):
+![a](https://github.com/ch812248495/My-blog/blob/master/image/21.png)
 
 Fig.13. Stock price predication
 
@@ -71,11 +85,13 @@ In this module, I grabbed some data from Baidu’s “hot search terms” make a
 
 
 
+![a](https://github.com/ch812248495/My-blog/blob/master/image/22.png)
 
 Fig.14. The data visualization 
 
 1.5 RECOMMENDATION SYSTEM
 The preference for each critic:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/23.png)
 
 Fig.15. The data visualization 
 By analyzing these data, I draw a few conclusion:
@@ -115,6 +131,7 @@ to fit the model:
 
 	The estimation of (a,b) is complicated so I skip their mathematical form.	
 	Using the linear regression method to forecast the future prices (the red one)
+![a](https://github.com/ch812248495/My-blog/blob/master/image/24.png)
 
 Fig.16. Predication
 
@@ -122,6 +139,7 @@ Fig.16. Predication
 	Main idea: project the (y,X) to a higher-dimensional space to draw a plane to fit them.
 	Basically, the SVM (support vector machine) is utilized for classification and regression analysis.
 	The basic intention for SVM is separating 2 groups of points, if we find it hard to separate them in low-dimensional space with one line, we will project them (by kernel function) to a high-dimensional space and then separate them with a plane:
+![a](https://github.com/ch812248495/My-blog/blob/master/image/25.png)
 
 Fig.17. The SVM sketch map
 	The key problem is, how to map the low-dimensional space to high-dimensional space? There are several kernel functions to do the mapping:
@@ -135,6 +153,7 @@ Fig.15. Predication
 	Here I use the LSTM(long short term network) to do the predication, there will be three types of layers: input layer, hidden layer, output layer.
 
 
+![aa]()
 
 Fig.16. Three layers
 The input layer will be
@@ -144,6 +163,7 @@ the hidden layer is set to be
 the output layer is
 
 As a result, the previous price will influence the output, the fitting task is to calculate the parameters W and U.
+![aa]()
 
 Fig.17. Predication
 
